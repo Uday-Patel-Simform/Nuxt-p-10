@@ -2,7 +2,7 @@
     <nav class="app-nav">
         <div class="navbar">
             <div class="nav-logo">
-                <a @click="navigateTo('/')">C$G</a>
+                <a @click="navigateTo('/')">{{ $t('title') }}</a>
             </div>
             <div class="nav-links">
                 <div v-if="store.isLoggedIn">
@@ -47,7 +47,7 @@ store.getIsLoggedIn
     margin-bottom: 30px;
     font-size: 25px;
     background-color: #34495E;
-
+    border-radius: 0px 0px 20px 20px;
 }
 
 .navbar {
@@ -78,7 +78,7 @@ store.getIsLoggedIn
     margin-left: 30px;
 }
 
-.app-nav .nav-links select{
+.app-nav .nav-links select {
     background-color: transparent;
     color: #ffffff;
     border: 1px solid #ffffff;
@@ -132,17 +132,33 @@ store.getIsLoggedIn
 
     .app-nav .nav-links {
         display: flex;
+        justify-content: space-between;
+        width: 55%;
+        margin-right: 20px;
+    }
+
+    .app-nav .nav-links div:first-child {
+        width: 60%;
+    }
+
+    .app-nav .nav-links div {
         justify-content: space-evenly;
-        width: 50%;
     }
 
     .app-nav .nav-links a {
         font-size: 20px;
         margin: 0;
     }
+
+    .app-nav .nav-links label {
+        margin-left: 0px;
+    }
 }
 
 @media (max-width:500px) {
+    .app-nav .nav-links {
+    width: 50%;
+}
     .app-nav .nav-links a {
         font-size: 15px;
     }
@@ -151,7 +167,13 @@ store.getIsLoggedIn
         font-size: 25px;
         margin: 0 10px;
     }
-
+    .nav-links svg {
+    height: 15px;
+}
+.app-nav .nav-links select {
+    font-size: 12px;
+    width: 65px;
+}
 }
 
 @media (max-width:400px) {
@@ -170,5 +192,4 @@ store.getIsLoggedIn
         height: 50px;
     }
 
-}
-</style>
+}</style>

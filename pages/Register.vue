@@ -59,7 +59,7 @@
                 <p class="vAlert dobErr"></p>
             </div>
             <div class="btn_container">
-                <button class="btn" type="submit">Register</button>
+                <button class="btn" type="submit">{{ $t('register') }}</button>
             </div>
             <div class="btn_container">
                 <p>Already have an account? <nuxt-link to="/Login">Login</nuxt-link> here.</p>

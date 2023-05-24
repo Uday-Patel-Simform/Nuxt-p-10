@@ -3,7 +3,7 @@
 
     <div class="add_btn_container">
       <button class="add_btn" id="add" @click="setBtnTxt($event)">
-        Add Car
+        {{ $t('add') }}
       </button>
     </div>
     <transition name="popup">
@@ -186,6 +186,7 @@ body {
 @media (max-width:673px) {
   .content_container {
     justify-content: center;
+    margin-top: 30px;
   }
 
   .car-card {

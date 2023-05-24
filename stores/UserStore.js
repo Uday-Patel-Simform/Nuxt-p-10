@@ -3,8 +3,7 @@ import { defineStore } from "pinia"
 export const useUserStore = defineStore("UserStore", {
   state: () => ({
     isLoggedIn: null,
-    url: useRuntimeConfig().public.USER_API_URL,
-    urlLogin: useRuntimeConfig().public.USER_API_URL_LOGIN
+    url: useRuntimeConfig().public.USER_API_URL
   }),
   getters:{
     getIsLoggedIn(state){
@@ -20,7 +19,7 @@ export const useUserStore = defineStore("UserStore", {
       }
     },
     async loginUser(user) {
-      const res = await useFetch('/api/login', {
+      await useFetch('/api/login', {
         method: 'POST',
         body: user
       }).then(res => {

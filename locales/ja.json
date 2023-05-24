@@ -4,5 +4,11 @@
   "login": "ログイン",
   "register": "登録",
   "english": "英語",
-  "japanese": "日本語"
+  "japanese": "日本語",
+  "title":"車$シ",
+  "add":"+ 含む 車",
+  "edit":"編集",
+  "delete":"削除",
+  "info":"情報",
+  "users":"ユーザー"
 }

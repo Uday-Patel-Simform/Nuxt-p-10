@@ -7,7 +7,6 @@ export default defineNuxtConfig({
     public: {
       CAR_API_URL: process.env.CAR_API_URL,
       USER_API_URL: process.env.USER_API_URL,
-      USER_API_URL_LOGIN: process.env.USER_API_URL_LOGIN,
     },
   },
   modules: ["@pinia/nuxt", "@pinia-plugin-persistedstate/nuxt", '@vueuse/nuxt'],

@@ -4,5 +4,11 @@
   "login": "Login",
   "register": "Register",
   "english": "English",
-  "japanese": "japanese"
+  "japanese": "japanese",
+  "title":"C$G",
+  "add":"+ Add Car",
+  "edit":"Edit",
+  "delete":"Delete",
+  "info":"INFO",
+  "users":"Users"
 }

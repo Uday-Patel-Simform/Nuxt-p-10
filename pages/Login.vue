@@ -16,7 +16,7 @@
             </div>
             <p class="vAlert"></p>
             <div class="btn_container">
-                <button class="btn" type="submit">Login</button>
+                <button class="btn" type="submit">{{ $t('login') }}</button>
             </div>
             <div class="btn_container">
                 <p>Don't have an account? <NuxtLink to="/Register"> Register</NuxtLink> here.</p>
