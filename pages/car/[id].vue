@@ -49,7 +49,7 @@ const route = useRoute()
 
 store.carID = route.params.id
 let token = useStorage('token').value
-const car = await useFetchCar(token)
+const car = await useFetchCar(token,store.carID)
 isLoading.value = false
 
 </script>
@@ -90,6 +90,7 @@ section {
 
 .car-details-container {
     width: 80%;
+    /* height: 75vh; */
     margin-top: 50px;
     display: flex;
     flex-direction: column;
@@ -100,6 +101,7 @@ section {
     border-radius: 5px;
     background-color: #fff;
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-around;
 }
@@ -110,7 +112,7 @@ section {
 
 .img-container img {
     width: 100%;
-    object-fit: contain;
+    height: 100%;
 }
 
 .detail-container {
@@ -138,6 +140,7 @@ section {
 .car-desc p,
 .car-price p {
     font-size: 1vw;
+    word-wrap: break-word;
 }
 
 .details-card-enter-from {

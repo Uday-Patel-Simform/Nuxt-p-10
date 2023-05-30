@@ -34,6 +34,7 @@
 </template>
 <script setup>
 import { useCarStore } from '../stores/CarStore'
+import { useStorage } from '@vueuse/core'
 
 const store = useCarStore()
 const { togglePopup } = useTogglePopup()
@@ -41,7 +42,8 @@ const { validateForm } = useValidateIP()
 const { displayAlert, removeAlert } = useToggleFormAlert()
 
 if (store.formBtnTxt === "Save") {
-    store.carObj = await useFetchCar()
+    let token = useStorage('token').value
+    store.carObj = await useFetchCar(token,store.carID)
 }
 const isString = () => {
     const nameValue = Name.value;
@@ -57,7 +59,7 @@ const checkDescLength = () => {
     const len = Description.value.length;
     let message = "";
     let isValid = true;
-    if(Description.value.trim() === ''){
+    if (Description.value.trim() === '') {
         message = " can't only contain white spaces*";
         isValid = false;
     } else if (len < 30) {
@@ -88,12 +90,12 @@ const isNumber = () => {
     }
 }
 
-const handleSubmit = (e) =>{
+const handleSubmit = (e) => {
     e.preventDefault();
     let formElements = document.forms[0].elements
 
     if (validateForm(formElements) && isString()
-    && checkDescLength() && isImgUrl() && isNumber()) {
+        && checkDescLength() && isImgUrl() && isNumber()) {
         if (store.formBtnTxt == "ADD") {
             if (confirm("Add this car entry??")) {
                 useAddData(store.url, store.carObj)

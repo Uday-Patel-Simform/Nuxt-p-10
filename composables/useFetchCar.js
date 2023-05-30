@@ -1,9 +1,9 @@
 import { useCarStore } from '../stores/CarStore'
 
-export default async (token) => {
+export default async (token,id) => {
     const store = useCarStore()
     const route = useRoute()
-    const {data , error} = await useFetch(store.url+route.params.id,{
+    const {data , error} = await useFetch(store.url+id,{
         headers: {
             Authorization: `Bearer ${token}`
         }
